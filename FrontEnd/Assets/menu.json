@@ -1,0 +1,164 @@
+[
+  {
+    "icone": null,
+    "label": "Ciente",
+    "menu": [
+      {
+        "icone": "icon-home2",
+        "label": "Meus atendimentos",
+        "menu": [],
+        "rota": "/ciente/grid"
+      },
+      {
+        "icone": "icon-stats-bars2",
+        "label": "Estatísticas",
+        "menu": [],
+        "rota": null
+      },
+      {
+        "icone": "icon-phone2",
+        "label": "Solicitações",
+        "menu": [
+          {
+            "icone": null,
+            "label": "Nova solicitação",
+            "menu": [],
+            "rota": "/ciente/novaSolicitacao"
+          },
+          {
+            "icone": null,
+            "label": "Minhas solicitações",
+            "menu": [],
+            "rota": null
+          },
+          {
+            "icone": null,
+            "label": "Encaminhar",
+            "menu": [],
+            "rota": null
+          },
+          {
+            "icone": null,
+            "label": "Fechar",
+            "menu": [],
+            "rota": null
+          }
+        ],
+        "rota": null
+      },
+      {
+        "icone": "icon-display4",
+        "label": "Equipamentos",
+        "menu": [
+          {
+            "icone": null,
+            "label": "Tipos",
+            "menu": [],
+            "rota": "/ciente/tipoEquipamento"
+          },
+          {
+            "icone": null,
+            "label": "Modelos",
+            "menu": [],
+            "rota": "http://jubarte.riodasostras.rj.gov.br/ciente/View/GerenciarModeloEquipamentoView.php"
+          },
+          {
+            "icone": null,
+            "label": "Equipamentos",
+            "menu": [],
+            "rota": "http://jubarte.riodasostras.rj.gov.br/ciente/View/GerenciarEquipamentoView.php"
+          },
+          {
+            "icone": null,
+            "label": "Movimentação",
+            "menu": [],
+            "rota": null
+          }
+        ],
+        "rota": null
+      },
+      {
+        "icone": "icon-hammer-wrench",
+        "label": "Serviços",
+        "menu": [
+          {
+            "icone": null,
+            "label": "Tipos de serviço",
+            "menu": [],
+            "rota": null
+          },
+          {
+            "icone": null,
+            "label": "Serviços",
+            "menu": [],
+            "rota": "/ciente/servicos"
+          }
+        ],
+        "rota": null
+      },
+      {
+        "icone": "icon-puzzle4",
+        "label": "Administração",
+        "menu": [
+          {
+            "icone": null,
+            "label": "Perfis",
+            "menu": [],
+            "rota": null
+          },
+          {
+            "icone": null,
+            "label": "Usuários",
+            "menu": [],
+            "rota": null
+          },
+          {
+            "icone": null,
+            "label": "Contratos",
+            "menu": [],
+            "rota": "/ciente/contrato"
+          },
+          {
+            "icone": null,
+            "label": "Hierarquia",
+            "menu": [],
+            "rota": "/ciente/hierarquia"
+          }
+        ],
+        "rota": null
+      }
+    ],
+    "rota": null
+  },
+  {
+    "icone": null,
+    "label": "SCS",
+    "menu": [
+      {
+        "icone": "icon-cube4",
+        "label": "Sistemas",
+        "menu": [],
+        "rota": null
+      },
+      {
+        "icone": "icon-users4",
+        "label": "Perfis de usuário",
+        "menu": [],
+        "rota": "pages/dadosUsuario"
+      },
+      {
+        "icone": "icon-user-tie",
+        "label": "Permissões",
+        "menu": [],
+        "rota": "pages/gerenciaPessoa"
+      },
+      {
+        "icone": "icon-user-tie",
+        "label": "Menus",
+        "menu": [],
+        "rota": "pages/menus"
+      }
+    ],
+    "rota": null
+  }
+]

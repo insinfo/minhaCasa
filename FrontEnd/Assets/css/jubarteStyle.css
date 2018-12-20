@@ -1,0 +1,131 @@
+/* ------------------------------------------------------------------------------
+*
+*  # Jubarte Custom color system
+*
+*  Version: 1.0
+*  Latest update: Nov 30, 2017
+*
+* ---------------------------------------------------------------------------- */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    background: rgba(10, 255, 53, 0);
+    overflow: visible;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar:hover {
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+}
+
+::-webkit-scrollbar-thumb:vertical {
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/*fim scrollbar */
+
+
+/* configuração para rolagem da pagina dentro do iframe*/
+.containerInsideIframe {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    display: block;
+    overflow: auto;
+    border: none;
+    padding-left: 15px;
+}
+
+
+.containerCustom {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+}
+
+.iframeCustom {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* logo */
+.navbar-brand {
+    padding: 0;
+}
+
+.navbar-brand > img {
+    margin-top: 0;
+    height: 50px;
+}
+
+.navbar {
+    background: #0076af; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #153157, #009bcc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #153157, #009bcc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #153157, #009bcc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #153157, #009bcc); /* Standard syntax */
+}
+
+.navbar-header {
+
+}
+
+/* Barra de Progresso /Carregamento da Página  */
+.pace .pace-progress {
+    background: #ff890d;
+}
+
+/* header principal */
+.navbar-inverse {
+
+}
+
+.cardBody:hover{
+    border: solid 2px #0076af;
+}
+
+    /* menu lateral */
+.sidebar {
+
+}

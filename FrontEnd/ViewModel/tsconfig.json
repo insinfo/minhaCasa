@@ -1,0 +1,77 @@
+{
+  "pessoa": {
+    "idPessoa": "",
+    "tipoPessoa": "Fisica",
+    "nome": "Aline Souza",
+    "emailPrincipal": "linecrsouza@gmail.com",
+    "emailAdicional": "",
+    "cpf": "08755375707",
+    "rg": "119542025",
+    "dataEmissao": "15/12/1996",
+    "orgaoEmissor": "IFP",
+    "ufOrgaoEmissor": "20",
+    "paisNacionalidade": "33",
+    "dataNascimento": "03/07/1980",
+    "sexo": "Feminino",
+    "cnpj": "",
+    "nomeFantasia": "",
+    "inscricaoEstadual": "",
+
+    "profissao": "Analista de Sistemas",
+    "naturalidade": "",
+    "grupoSanguineo": "O",
+    "fatorRH": "-",
+
+    "pis": "12730700589",
+    "estadoCivil": "Solteiro",
+    "nomePai": "Adir",
+    "nomeMae": "Rita",
+
+    "telefones": [
+      {
+        "tipoTelefone": "Móvel",
+        "numeroTelefone": "22999744482"
+      }
+    ],
+
+    "enderecos": [
+      {
+        "cep": "28895883",
+        "tipoEndereco": "Residencial",
+        "pais": "33",
+        "uf": "20",
+        "municipio": "3242",
+        "bairro": "Jardim Mariléa",
+        "tipoLogradouro": "Rua",
+        "logradouro": "Resende",
+        "numeroLogradouro": "150",
+        "complemento": "casa 03",
+        "validaoCorreios": "true",
+        "enderecoDivergente": "false"
+      }
+    ]
+  },
+  "cargaHoraria": {
+
+
+  },
+  "servidores":[
+    {
+      "idPessoa": 1,
+      "matricula": "13608-5",
+
+      "dataAdmissao": "2017-05-01",
+      "dataExoneracao": null,
+      "idVinculo": 2,
+      "idCargaHoraria": 4,
+      "idCargo": 84,
+      "idFuncaoGratificada": 30,
+      "idLotacao": 1, /*idOrganograma*/
+      "idLocalTrabalho":1, /*idOrganograma*/
+
+      "dataCadastro": "27/03/2018",
+      "dataAlteracao": "27/03/2018",
+      "ativo": true
+    }
+  ]
+}

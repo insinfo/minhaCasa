@@ -1,0 +1,130 @@
+$(function () {
+    var jTimeline = new Jtimeline();
+    jTimeline.init();
+});
+
+function Jtimeline(idContainer) {
+    this.container = $('#' + idContainer);
+    this.dragEnter = false;
+    this.init();
+    this.weekToPosition =[
+        {"key":"seg","position":62},
+        {"key":"ter","position":102},
+        {"key":"qua","position":142},
+        {"key":"qui","position":182},
+        {"key":"sex","position":222},
+        {"key":"sab","position":262},
+        {"key":"dom","position":302}
+        ];
+    this.minuteToPosition =[
+        {"key":"00","position":0},
+        {"key":"15","position":26},
+        {"key":"30","position":52},
+        {"key":"45","position":78},
+    ]
+}
+
+Jtimeline.prototype.init = function () {
+    var self = this;
+    self.eventos();
+    self.drawWeek();
+    self.drawWorkloadBoard();
+};
+Jtimeline.prototype.eventos = function () {
+    var self = this;
+};
+Jtimeline.prototype.drawWeek = function () {
+    var self = this;
+    var html = '<div class="tableWorkLoad tableWorkLoadLeft">\n' +
+        '                                                        <table>\n' +
+        '                                                            <thead>\n' +
+        '                                                            <tr>\n' +
+        '                                                                <th>Horários</th>\n' +
+        '                                                            </tr>\n' +
+        '                                                            </thead>\n' +
+        '                                                            <tbody>\n' +
+        '                                                            <tr>\n' +
+        '                                                                <td data-week="seg">Segunda-feira</td>\n' +
+        '                                                            </tr>\n' +
+        '                                                            <tr>\n' +
+        '                                                                <td data-week="ter">Terça-feira</td>\n' +
+        '                                                            </tr>\n' +
+        '                                                            <tr>\n' +
+        '                                                                <td data-week="qua">Quarta-feira</td>\n' +
+        '                                                            </tr>\n' +
+        '                                                            <tr>\n' +
+        '                                                                <td data-week="qui">Quinta-feira</td>\n' +
+        '                                                            </tr>\n' +
+        '                                                            <tr>\n' +
+        '                                                                <td data-week="sex">Sexta-feira</td>\n' +
+        '                                                            </tr>\n' +
+        '                                                            <tr>\n' +
+        '                                                                <td data-week="sab">Sábado</td>\n' +
+        '                                                            </tr>\n' +
+        '                                                            <tr>\n' +
+        '                                                                <td data-week="dom">Domingo</td>\n' +
+        '                                                            </tr>\n' +
+        '                                                            </tbody>\n' +
+        '                                                        </table>\n' +
+        '                                                    </div>';
+    self.container.empty();
+    self.container.append(html);
+};
+Jtimeline.prototype.drawWorkloadBoard = function () {
+    var self = this;
+    var html = '<div class="tableWorkLoad tableWorkLoadRight"><table><thead><tr>';
+    for (var i = 0; i < 24; i++) {
+        html += '<th colspan="4">' + i + 'h</th>';
+    }
+    html += '</tr><tr>';
+    for (var j = 0; j < 24; j++) {
+        html += '<th>00</th><th>15</th><th>30</th><th>45</th>';
+    }
+    html += '</tr></thead><tbody>';
+    for (var x = 0; x < 7; x++) {
+        var row = '<tr>';
+        for (var y = 0; y < 96; y++) {
+            var col = '<td></td>';
+            row += col;
+        }
+        row += '</tr>';
+        html += row;
+    }
+    html += '</tbody></table></div>';
+    self.container.append(html);
+};
+Jtimeline.prototype.addDayWorkload = function (hEntrada, hSaida, local, diasSemana) {
+    var self = this;
+    var start = moment.utc(hEntrada, "HH:mm");
+    var end = moment.utc(hSaida, "HH:mm");
+    if (end.isBefore(start)) end.add(1, 'day');
+    var d = moment.duration(end.diff(start));
+    var s = moment.utc(+d).format('H:mm');
+    for (var i = 0; i < diasSemana.length; i++){
+        var x = 0;
+        var y = 0;
+        for (var j = 0; j < self.weekToPosition.length; j++){
+            if (diasSemana[i] === self.weekToPosition[j]['key']){
+                y = self.weekToPosition[j]['position'];
+            }
+        }
+        var calcX = self.calcPositionX(hEntrada);
+        var width = self.calcPositionX(hSaida)-calcX;
+        var html = '<div style="top:'+y+'px; left:'+calcX+'px; width:'+width+'px;" class="dayWorkLoad"><p>' + s + ' - ' + local + '</p></div>';
+        self.container.find('.tableWorkLoadRight').append(html);
+    }
+};
+
+Jtimeline.prototype.calcPositionX = function (inputHora) {
+    var self = this;
+    var hora = inputHora.split(':')[0];
+    var minuto = inputHora.split(':')[1];
+    var minutoPosition = 0;
+    for (var k = 0; k < self.minuteToPosition.length; k++){
+        if (self.minuteToPosition[k]['key'] === minuto){
+            minutoPosition = self.minuteToPosition[k]['position'];
+        }
+    }
+    var calcX = hora*(4*26)+minutoPosition;
+    return calcX;
+}
